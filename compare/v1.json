@@ -3,8 +3,8 @@
         "blocks": {
             "order_change": "order change",
             "modify": "v1 %1?",
-            "same": "i am the same",
-            "new_add": "touching color %1?"
+            "new_add": "touching color %1?",
+            "same": "i am the same"
         },
         "me": {
             "same": "hello",

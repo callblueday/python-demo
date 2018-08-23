@@ -1,0 +1,14 @@
+__MACOSX
+/.actionScriptProperties
+/.project
+/bin-debug
+/bin-release
+/bin-release-temp
+adl.exe
+node_modules
+.DS_Store
+.idea
+.vscode
+npm-debug.log
+
+__pycache__

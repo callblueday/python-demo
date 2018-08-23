@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+# https://github.com/mewwts/addict
+
+
 import json
 from addict import Dict
 
@@ -11,9 +14,9 @@ def dictionary_combine_key(dictionary, newJson, mykey):
             dictionary_combine_key(value, newJson, mykey)
         except AttributeError:
             key = '.'.join(mykey)
-            print(str(key) + ' : ' + str(value))
+            # print(str(key) + ' : ' + str(value))
             newJson[key] = value
-            mykey.pop()
+        mykey.pop()
     return newJson
 
 def serialize(filepath):
@@ -25,7 +28,7 @@ def serialize(filepath):
     return result
 
 # a=serialize('test-data/en.json')
-v1 = serialize('v1.json')
+# v1 = serialize('v1.json')
 # v2 = serialize('v2.json')
 # print(v1)
 
@@ -35,10 +38,7 @@ v1 = serialize('v1.json')
 #     * 相同的：跳过
 #     * 新增的：跳过
 def compare(dict1, dict2):
-    # print(dict1)
-    # print(dict2)
     for key, value in dict1.items():
-        print(dict2[key] == value)
         if dict2[key]:
             if dict2[key] != value:
                 dict1[key] = dict2[key]
@@ -75,8 +75,10 @@ def deserialize(dictionary):
         mydict.update(temp)
     return mydict
 
+
+# demo
+# v1 = serialize('v1.json')
 # print(v1)
 # compareResult = deserialize(v1)
 # print(compareResult)
-
 # write_to_file('./result.json', compareResult)

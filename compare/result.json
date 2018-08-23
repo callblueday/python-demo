@@ -2,11 +2,14 @@
     "mscratch-i18n/msg": {
         "blocks": {
             "order_change": "order change",
-            "modify": "v1 %1?",
-            "same": "i am the same",
+            "modify": "v2 %1?",
             "new_add": "touching color %1?",
-            "me": {
-                "same": "hello"
+            "same": "i am the same"
+        },
+        "me": {
+            "same": "hello",
+            "he": {
+                "him": "good"
             }
         }
     }
