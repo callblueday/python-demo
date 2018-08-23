@@ -7,11 +7,11 @@
 import json
 from addict import Dict
 
-def dictionary_combine_key(dictionary, newJson, mykey):
+def _dictionary_combine_key(dictionary, newJson, mykey):
     for key, value in dictionary.items():
         try:
             mykey.append(key)
-            dictionary_combine_key(value, newJson, mykey)
+            _dictionary_combine_key(value, newJson, mykey)
         except AttributeError:
             key = '.'.join(mykey)
             # print(str(key) + ' : ' + str(value))
@@ -24,7 +24,7 @@ def serialize(filepath):
     mykey = []
     f = open(filepath)
     content = json.load(f)
-    result = dictionary_combine_key(content, newJson, mykey)
+    result = _dictionary_combine_key(content, newJson, mykey)
     return result
 
 # a=serialize('test-data/en.json')
@@ -57,8 +57,8 @@ def write_to_file(filepath, dictionary):
 
 
 # keys = ["a", "b", "c"]
-# a = getKey(keys, 'nihao')
-def getKey(keys, value):
+# a = _getKey(keys, 'nihao')
+def _getKey(keys, value):
     while len(keys) > 0:
         temp = {}
         li = keys.pop()
@@ -71,7 +71,7 @@ def deserialize(dictionary):
     mydict = Dict({})
     for key, value in dictionary.items():
         keys = key.split('.')
-        temp = Dict(getKey(keys, value))
+        temp = Dict(_getKey(keys, value))
         mydict.update(temp)
     return mydict
 
