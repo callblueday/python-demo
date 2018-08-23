@@ -3,7 +3,7 @@
       "blocks": {
           "modify": "v2 %1?",
           "same": "i am the same",
-          "order_change": "order_change"
+          "order_change": "order change"
       }
   }
 }

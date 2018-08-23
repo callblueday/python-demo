@@ -4,12 +4,9 @@
             "order_change": "order change",
             "modify": "v1 %1?",
             "same": "i am the same",
-            "new_add": "touching color %1?"
-        },
-        "me": {
-            "same": "hello",
-            "he": {
-                "him": "good"
+            "new_add": "touching color %1?",
+            "me": {
+                "same": "hello"
             }
         }
     }

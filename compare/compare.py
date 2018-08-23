@@ -1,29 +1,31 @@
-# import json
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
-# def loadFont(keys):
-#     a = ''
-#     f = open("v1.json", encoding='utf-8')
-#     content = json.load(f)
+# https://github.com/mewwts/addict
 
-#     for key in keys:
+import json
+import os
+from addict import Dict
 
-#         a = content[key]
-#         print(a)
-
-
-#     # family = content['mscratch-i18n/msg']['blocks']['modify']
-#     # return family
-
-# t = loadFont(['mscratch-i18n/msg', 'blocks', 'modify'])
-
-# print(t)
+def loadJson():
+    f = open("v1.json")
+    content = json.load(f)
+    # content = Dict(content)
+    return content;
 
 
 
-a = ['mscratch-i18n/msg', 'blocks', 'modify']
-c = ''
-b = iter(a)
-while (d = next(b, -1) != -1):
-    c = d
+t = loadJson()
 
-print(c)
+print(t.has_key('order_change'))
+print(t.has_key('mscratch-i18n/msg'))
+
+
+# t['mscratch-i18n/msg']['blocks]
+# print(t['mscratch-i18n/msg']['blocks'])
+
+# 打开 v2.json，抽离成字典，用于做对比
+
+# 打开 v1.json，逐行读取文件
+
+# 写入到新文件 v3.json
